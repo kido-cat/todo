@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 29.107 29.107" style="enable-background:new 0 0 29.107 29.107;" xml:space="preserve" width="512px" height="512px" class=""><g transform="matrix(-1.83697e-16 -1 1 -1.83697e-16 5.32907e-15 29.107)"><SCRIPT xmlns="" id="allow-copy_script" class="active-path">(function agent() {
+    let isUnlockingCached = false
+    const isUnlocking = () =&gt; isUnlockingCached
+    document.addEventListener('allow_copy', event =&gt; {
+      const { unlock } = event.detail
+      isUnlockingCached = unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = e =&gt; {
+      if (isUnlocking()) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach(evt =&gt; {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()</SCRIPT><g>
+	<g id="c147_full_moon">
+		<g>
+			<path d="M14.554,0C6.561,0,0,6.562,0,14.552c0,7.996,6.561,14.555,14.554,14.555c7.996,0,14.553-6.559,14.553-14.555     C29.106,6.562,22.55,0,14.554,0z" data-original="#000000" class="active-path" fill="#FFFFFF"/>
+		</g>
+	</g>
+	<g id="Capa_1_14_">
+	</g>
+</g></g> </svg>

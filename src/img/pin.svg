@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve" width="512px" height="512px"><g><SCRIPT xmlns="" id="allow-copy_script" class="active-path" style="">(function agent() {
+    let isUnlockingCached = false
+    const isUnlocking = () =&gt; isUnlockingCached
+    document.addEventListener('allow_copy', event =&gt; {
+      const { unlock } = event.detail
+      isUnlockingCached = unlock
+    })
+
+    const copyEvents = [
+      'copy',
+      'cut',
+      'contextmenu',
+      'selectstart',
+      'mousedown',
+      'mouseup',
+      'mousemove',
+      'keydown',
+      'keypress',
+      'keyup',
+    ]
+    const rejectOtherHandlers = e =&gt; {
+      if (isUnlocking()) {
+        e.stopPropagation()
+        if (e.stopImmediatePropagation) e.stopImmediatePropagation()
+      }
+    }
+    copyEvents.forEach(evt =&gt; {
+      document.documentElement.addEventListener(evt, rejectOtherHandlers, {
+        capture: true,
+      })
+    })
+  })()</SCRIPT><g>
+	<g>
+		<path d="M480,202.667h-10.667V192c0-29.397-23.915-53.333-53.333-53.333H53.333C23.915,138.667,0,162.603,0,192v128    c0,29.397,23.915,53.333,53.333,53.333H416c29.419,0,53.333-23.936,53.333-53.333v-10.667H480c17.643,0,32-14.357,32-32v-42.667    C512,217.024,497.643,202.667,480,202.667z M490.667,277.333c0,5.888-4.8,10.667-10.667,10.667h-21.333    c-5.888,0-10.667,4.779-10.667,10.667V320c0,17.643-14.357,32-32,32H53.333c-17.643,0-32-14.357-32-32V192    c0-17.643,14.357-32,32-32H416c17.643,0,32,14.357,32,32v21.333c0,5.888,4.779,10.667,10.667,10.667H480    c5.867,0,10.667,4.779,10.667,10.667V277.333z" data-original="#000000" class="active-path" fill="#FFFFFF"/>
+	</g>
+</g><g>
+	<g>
+		<path d="M416,181.333H53.333c-5.888,0-10.667,4.779-10.667,10.667v128c0,5.888,4.779,10.667,10.667,10.667H416    c5.888,0,10.667-4.779,10.667-10.667V192C426.667,186.112,421.888,181.333,416,181.333z M405.333,309.333H64V202.667h341.333    V309.333z" data-original="#000000" class="active-path" fill="#FFFFFF"/>
+	</g>
+</g></g> </svg>

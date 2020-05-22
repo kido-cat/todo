@@ -1,0 +1,163 @@
+body{
+	background: #FFF;
+}
+
+.container{
+	width: 90%;
+	margin: 0 auto;
+}
+
+.Todolist{
+	background: #61b6c1;
+	width: 30%;
+	height: 600px;
+	margin: 0 auto;
+	border-radius: 8px;
+    position: relative;
+}
+.header-todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+}
+.header-left img {
+	width: 20%;
+	margin-right: -2px;
+}
+.header-left img:last-child {
+    width: 30%;
+    margin-left: 5px;
+}
+span.header-left {
+    display: flex;
+    margin: 0 0 0 6px;
+}
+.header-mid, .header-left, .header-right{
+	flex-basis: 60px;
+}
+.header-mid, .percent-pin {
+    color: #fff;
+    font-size: 13px;
+    text-align: center;
+}
+.iconPin{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.iconPin img{
+	width: 70%
+}
+.header-right {
+    display: flex;
+    align-items: center;
+    margin-right: 6px;
+}
+
+/*component2*/
+.Daily-list {
+    margin-top: 20px;
+}
+.iconList {
+    width: 18px;
+    position: absolute;
+}
+.iconList img{
+    width: 100%;
+}
+.title-daily {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #FFF;
+    font-weight: 700
+}
+.wrapper_add {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    margin: -5%;
+}
+button.btn_add {
+    color: #61b6c1;
+    border: 0;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
+    box-shadow: 1px 1px 15px 0px #dadada;
+    cursor: pointer;
+}
+button.btn_add:focus{
+    border: 0;
+    outline: none;
+}
+
+
+/*btn add clicked*/
+.modal_input_add {
+    position: absolute;
+    display: block;
+    width: 85%;
+    text-align: center;
+    bottom: 50%;
+    height: 100px;
+    margin-left: 8%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.btn_close_item{
+    position: absolute;
+    right: 0;
+    top: 0
+}
+input.input_add_item {
+    width: 70%;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #eee;
+}
+
+.overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    z-index: 0;
+    opacity: 0.6;
+    background: #000;
+}
+button.btn_add_item {
+    padding: 5px;
+    margin-left: 7px;
+    border-radius: 5px;
+    cursor: pointer;
+    background: #059bad;
+    color: #ffdfdf;
+    transition: 0.5s all
+}
+button.btn_add_item:hover{
+    background: #3a6d73
+}
+.btn_close_item {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: 1px solid #059bad;
+    background: red;
+    padding: 0px 11px;
+    font-size: 25px;
+    color: #fff;
+    cursor: pointer;
+       transition: 0.5s all
+}
+.btn_close_item:hover{
+    background: #bf0808
+}
+/*<div className="goback">
+				<a onClick={this.props.backTodo} href='#'> Back Home</a>		
+			</div>*/
